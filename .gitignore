@@ -1,0 +1,33 @@
+# AttendEase / Attendly .gitignore
+
+# Python
+backend/venv/
+backend/__pycache__/
+backend/*/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.sqlite3
+*.db
+backend/instance/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.npm
+*.log
+
+# Environment variables
+.env
+backend/.env
+frontend/.env.local
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
