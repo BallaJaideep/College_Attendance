@@ -222,3 +222,4 @@ Unit tests and end-to-end integration tests are included in the backend:
 ## ⚠️ Known Limitations
 - Attendance sessions default to one class session per subject per day.
 - Intended for local SQLite development and college evaluation demonstrations.
+
