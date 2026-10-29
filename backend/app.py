@@ -48,6 +48,14 @@ def role_required(*allowed_roles):
     return decorator
 
 
+# ----------------- PUBLIC ROUTES -----------------
+@app.route('/api/public/classes', methods=['GET'])
+def get_public_classes():
+    """Public endpoint to fetch class options for student registration without authentication"""
+    classes = Class.query.order_by(Class.department, Class.semester, Class.class_name).all()
+    return jsonify({'classes': [c.to_dict() for c in classes]}), 200
+
+
 # ----------------- AUTHENTICATION ROUTES -----------------
 @app.route('/api/auth/register', methods=['POST'])
 def register():

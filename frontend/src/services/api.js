@@ -22,10 +22,12 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    // Only auto-redirect on 401 if not already on public auth pages (login/register)
     if (error.response && error.response.status === 401) {
       localStorage.removeItem('attendly_token');
       localStorage.removeItem('attendly_user');
-      if (window.location.pathname !== '/login') {
+      const path = window.location.pathname;
+      if (path !== '/login' && path !== '/register') {
         window.location.href = '/login';
       }
     }

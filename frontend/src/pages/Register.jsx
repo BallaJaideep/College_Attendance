@@ -23,11 +23,11 @@ const Register = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch available classes for assignment
-    api.get('/admin/classes')
+    // Fetch available classes for assignment from public endpoint
+    api.get('/public/classes')
       .then(res => setClasses(res.data.classes || []))
       .catch(() => {
-        // Fallback default if unauthenticated
+        // Fallback default
         setClasses([
           { id: 1, class_name: 'CSE-3A', department: 'Computer Science & Engineering', semester: 5 }
         ]);
