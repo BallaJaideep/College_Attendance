@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { GraduationCap, Mail, Lock, Eye, EyeOff, AlertCircle, CheckCircle, ShieldCheck } from 'lucide-react';
 import campusImg from '../assets/campus.svg';
@@ -216,12 +216,11 @@ const Login = () => {
             </div>
           </div>
 
-          <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '0.84rem', color: '#64748b' }}>
-            Are you a new student?{' '}
-            <Link to="/register" style={{ color: '#2563eb', fontWeight: '600', textDecoration: 'none' }}>
-              Create Account
-            </Link>
-          </p>
+          <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid #e2e8f0', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.8rem', color: '#64748b', lineHeight: '1.5' }}>
+              Student accounts are registered and managed directly by the college administration.
+            </p>
+          </div>
         </div>
       </div>
     </div>
